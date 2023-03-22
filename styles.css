@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80vw;
+    max-width: 1000;
+    height: 50vh;
+    padding: 5vw 25vh;
+
+
+}
+.element {
+    position: relative;
+
+    display: flex;
+    width: 17%;
+    background-color: gainsboro;
+    margin: 5px;
+
+}
+.element p{
+    display:inline-block; 
+    position: absolute;
+    left: 90px;
+    bottom: 15px;
+    
+}
+.element img {
+    position: absolute;
+    left: 70px;
+    bottom: 40px;
+
+}
