@@ -1,10 +1,18 @@
 const pokedex = document.getElementById('pokedex');
 
+let limit = 20;
+let i = 0;
+
+
 const fetchPokemon = () => {
     const promises = [];
-    for (let i = 1; i <= 20; i++) {
-        const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-        promises.push(fetch(url).then((res) => res.json()));
+    for(let j = 1; j <= 1; j++) {
+        for (let i = 1; i <= limit; i++) {
+            const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+            promises.push(fetch(url).then((res) => res.json()));
+        }
+    i += 20;
+    limit +=20;
     }
     Promise.all(promises).then((results) => {
         const pokemon = results.map((result) => ({
@@ -33,4 +41,8 @@ const displayPokemon = (pokemon) => {
     pokedex.innerHTML = pokemonHTMLString;
 };
 
+
+
 fetchPokemon();
+
+

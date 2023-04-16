@@ -9,7 +9,7 @@
         padding: 40px;
         margin: 0 auto;
         max-width: 1800px;
-        height: 500px;
+        height: auto;
     }
     
     #pokedex {
@@ -18,7 +18,7 @@
         grid-gap: 20px;
         padding-inline-start: 0;
     }
-    
+    /* Cards style  */
     .card {
         list-style: none;
         padding: 10px;
@@ -43,4 +43,11 @@
     
     .card-image {
         height: 120px;
+    }
+    /* button style  */
+    #load-more {
+        color: blue;
+        position: absolute;
+        left: 50%;
+        bottom: 10%;
     }
