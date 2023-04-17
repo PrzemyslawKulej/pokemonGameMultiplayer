@@ -1,10 +1,13 @@
 const pokedex = document.getElementById('pokedex');
 
+
 let limit = 20;
 let i = 0;
 
+// Fetching data from API and blocking button during the downloading 
 
 const fetchPokemon = () => {
+    
     const promises = [];
     for(let j = 1; j <= 1; j++) {
         for (let i = 1; i <= limit; i++) {
@@ -14,6 +17,7 @@ const fetchPokemon = () => {
     i += 20;
     limit +=20;
     }
+
     Promise.all(promises).then((results) => {
         const pokemon = results.map((result) => ({
             name: result.name,
@@ -40,6 +44,15 @@ const displayPokemon = (pokemon) => {
         .join('');
     pokedex.innerHTML = pokemonHTMLString;
 };
+
+// Creating button 
+
+let btn = document.createElement("button");
+document.body.appendChild(btn);
+btn.innerHTML = "Load More";
+btn.setAttribute('id','load-more');
+btn.onclick = fetchPokemon;
+
 
 
 
