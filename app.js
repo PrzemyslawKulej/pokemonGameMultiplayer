@@ -1,13 +1,13 @@
 const pokedex = document.getElementById('pokedex');
 
-
 let limit = 20;
 let i = 0;
 
-// Fetching data from API and blocking button during the downloading 
+// Fetching data from API and cooldown button during the fetching
 
 const fetchPokemon = () => {
-    
+
+    buttonCooldown();
     const promises = [];
     for(let j = 1; j <= 1; j++) {
         for (let i = 1; i <= limit; i++) {
@@ -17,6 +17,8 @@ const fetchPokemon = () => {
     i += 20;
     limit +=20;
     }
+
+    // Function that map results from fetched json
 
     Promise.all(promises).then((results) => {
         const pokemon = results.map((result) => ({
@@ -28,6 +30,8 @@ const fetchPokemon = () => {
         displayPokemon(pokemon);
     });
 };
+
+// Function that creates pokemon cards 
 
 const displayPokemon = (pokemon) => {
     console.log(pokemon);
@@ -47,11 +51,26 @@ const displayPokemon = (pokemon) => {
 
 // Creating button 
 
+
 let btn = document.createElement("button");
 document.body.appendChild(btn);
 btn.innerHTML = "Load More";
 btn.setAttribute('id','load-more');
 btn.onclick = fetchPokemon;
+
+// Function to cooldown button after clicking
+
+const buttonCooldown = () => {
+    document.getElementById("load-more").disabled = true;
+    setTimeout(function() {document.getElementById("load-more").disabled = false;}, 800);
+}
+
+// Creating logo img
+
+let img = document.createElement('img');
+img.src = "./images/logo.png";
+document.body.appendChild(img); 
+img.setAttribute('id','logo');
 
 
 

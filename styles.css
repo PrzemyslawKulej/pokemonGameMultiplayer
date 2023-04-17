@@ -6,10 +6,11 @@
     }
     
     .container {
-        text-align: center;
+        position: relative;
+        top: 200px;
         margin: 0 auto;
         max-width: 1800px;
-        max-height: 70vh;
+        max-height: 75vh;
         overflow: scroll;
     }
     
@@ -25,9 +26,13 @@
     .card {
         list-style: none;
         padding: 10px;
-        background-color: #f4f4f4;
+        background-color: #d6d4d4de;
         color: #222;
       text-align: center;
+    }
+    
+    .card:hover {
+        background-color: #50514f;
     }
      
     .card-title {
@@ -39,13 +44,14 @@
     
     .card-subtitle {
         margin-top: 5px;
-        color: #666;
+        color: #fa6603;
         font-weight: lighter;
     }
+
     
     
     .card-image {
-        height: 120px;
+        height: 100px;
     }
     /* button style  */
     #load-more {
@@ -57,8 +63,19 @@
         cursor: pointer;
         padding: 20px;
         width: 200px;
-        position: relative;
+        position: absolute;
         left: 45%;
-        bottom: 10%;
+        bottom: 1%;
         
+    }
+
+    /* Logo styled */
+
+    #logo {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%);
+        height: 200px;
+
     }
