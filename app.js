@@ -8,6 +8,8 @@ let i = 0;
 const fetchPokemon = () => {
 
     buttonCooldown();
+    buttonSpinnin();
+    
     const promises = [];
     for(let j = 1; j <= 1; j++) {
         for (let i = 1; i <= limit; i++) {
@@ -54,15 +56,29 @@ const displayPokemon = (pokemon) => {
 
 let btn = document.createElement("button");
 document.body.appendChild(btn);
-btn.innerHTML = "Load More";
-btn.setAttribute('id','load-more');
-btn.onclick = fetchPokemon;
+btn.classList.add('button');
+btn.onclick = fetchPokemon; 
+
+
+// Creating a span
+
+let span = document.createElement('span');
+span.innerHTML = "Load More"
+btn.appendChild(span);
+span.classList.add('button__text');
 
 // Function to cooldown button after clicking
 
 const buttonCooldown = () => {
-    document.getElementById("load-more").disabled = true;
-    setTimeout(function() {document.getElementById("load-more").disabled = false;}, 800);
+    document.getElementsByClassName('button').disabled = true;
+    setTimeout(function() {document.getElementsByClassName('button').disabled = false;}, 800);
+}
+
+// Function making button spinning during loading 
+
+const buttonSpinnin = () => {
+    btn.classList.add("button--loading");
+    setTimeout(function() {btn.classList.remove("button--loading");}, 800);
 }
 
 // Creating logo img
