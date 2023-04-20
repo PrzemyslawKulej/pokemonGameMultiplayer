@@ -26,7 +26,7 @@
     .card {
         list-style: none;
         padding: 10px;
-        background-color: #d6d4d4de;
+        /* background-color: #d6d4d4de; */
         color: #222;
       text-align: center;
     }
