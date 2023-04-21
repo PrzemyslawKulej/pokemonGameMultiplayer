@@ -59,6 +59,8 @@ const fetchPokemon = () => {
         // (() => {
         //     pokemonEl.style.backgroundColor = color;
         // })
+
+    // displayPokemon.log('good')
     });
 };
 
