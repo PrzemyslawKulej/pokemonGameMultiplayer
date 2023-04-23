@@ -61,6 +61,7 @@ const fetchPokemon = () => {
         // })
 
     // displayPokemon.log('good')
+    // displayPokemon.log('day')
     });
 };
 
